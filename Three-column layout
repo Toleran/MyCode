@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏式布局</title>
+    <style>
+    body{
+    margin:0;
+    padding:0;
+}
+.main{
+    margin: 20px;
+    height: 500px;
+    background-color: #CCCCCC;
+}
+.left{
+    margin: 20px;
+    width: 200px;
+    height: 120px;
+    background-color: #FFFFFF;
+    float: left;
+}
+.left i {
+    float: left;
+    margin: 20px;;
+}
+.left span{
+    display: block;
+    margin-top: 20px;;
+}
+.middle{
+    margin:20px 160px 0 240px;
+    height:400px;
+    background-color: #FFFFFF;
+    position: relative;
+    top: 20px;
+}
+.right {
+    margin: 20px;
+    width: 120px;
+    height: 440px;
+    background-color: #FFFFFF;
+    float: right;
+}
+.right img{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+    </style>
+    <link rel="stylesheet" href="task3.css"/>
+</head>
+<body>
+<div class="main">
+
+    <div class="left">
+        <i><img src="1005.jpg" alt="团队logo"></i>
+        <span>团队名称</span>
+    </div>
+    <div class="right">
+        <img src="1005.jpg" alt="个人logo">
+        <img src="1005.jpg" alt="个人logo">
+        <img src="1005.jpg" alt="个人logo">
+        <img src="1005.jpg" alt="个人logo">
+    </div>
+
+    <div class="middle"></div>
+</div>
+
+</body>
+</html>
