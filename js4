@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js4</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #dl li{
+            list-style: none;
+            margin-left:8px;
+            display: inline;
+            padding: 2px;
+            font-size: 20px;
+            color: white;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<input id="it" type="text"/>
+<span id="lin">
+    <button>左侧入</button>
+    <button>右侧入</button>
+</span>
+<span id="rout">
+    <button>左侧出</button>
+    <button>右侧出</button>
+</span>
+<ul id="dl">
+    <!--<li></li>-->
+    <!--<li></li>-->
+</ul>
+<script>
+    function getLeftData() {
+        //得到input的输入值
+        //获取列表的id，把获得的值输出到列表中，左侧入
+   var data=document.getElementById("it").value;
+   if (data==""){
+       alert("请输入数字");
+    }else{
+       var list=document.getElementById("dl");
+       var nl=document.createElement("li");
+       nl.innerHTML=data;
+       list.insertBefore(nl,list.firstChild);
+        }
+    }
+    function getRightData() {
+        //得到input的值，
+        //对值进行右侧入的操作
+        var data=document.getElementById("it").value;
+        if (data==""){
+            alert("请输入数字");
+        }else{
+            var list=document.getElementById("dl");
+            var nl=document.createElement("li");
+            nl.innerHTML=data;
+            list.appendChild(nl);
+        }
+    }
+    function outLeft() {
+        var list=document.getElementById("dl");
+            list.removeChild(list.firstChild);
+    }
+    function outRight() {
+        var list=document.getElementById("dl");
+            list.removeChild(list.lastChild);
+    }
+    (function btn() {
+        //点击事件
+        var btn1=document.getElementById("lin").childNodes;
+        var bnt=document.getElementById("rout").childNodes;
+        btn1[1].onclick=getLeftData;
+        btn1[3].onclick=getRightData;
+
+        bnt[1].onclick=outLeft;
+        bnt[3].onclick=outRight;
+    })();
+</script>
+</body>
+</html>
